@@ -1,3 +1,5 @@
+from game import Game 
+
 def main(): 
     """Run the Battleships game."""
     print("Welcome to Battleships!")
