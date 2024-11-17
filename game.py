@@ -34,6 +34,14 @@ class Game:
                 except ValueError: 
                     continue
                
+    def display_boards(self):
+        """Display the player's and PC's boards side by side."""
+        print(f"\n{self.player.name}'s Board:")
+        self.player.grid.display(reveal=True)
+
+        print("\nPC's Board (hidden):")
+        self.pc.grid.display(reveal=False)
+               
     def start(self): 
         """Main game loop for playing the game."""
         print(f"Hello {self.player.name} get ready to play!")
