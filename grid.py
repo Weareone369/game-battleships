@@ -18,7 +18,27 @@ class Grid:
                 
         self.ships.append(ship) 
         for x, y in ship: self.grid[x][y] = 'S' 
-         
+
+    def receive_shot(self, x, y): 
+        """ Process a shot at coordinates (x, y). Returns 'hit', 'miss', or 'sink' based on target location. """ 
+        if not (0 <= x < self.size and 0 <= y < self.size): 
+            raise ValueError("Shot is out of bounds.") 
+            
+        if self.grid[x][y] == 'S': 
+            self.grid[x][y] = 'X' # Mark as hit 
+            for ship in self.ships: 
+                if (x, y) in ship: 
+                    ship.remove((x, y)) 
+                if not ship: 
+                    self.ships.remove(ship) 
+                    return "sink" 
+                return "hit" 
+        elif self.grid[x][y] == '~': 
+            self.grid[x][y] = 'O' # Mark as miss 
+            return "miss" 
+        else: 
+            return "already_shot" 
+
     def display(self, reveal=False):
         """Display the grid, Reveal ship's if 'reveal' is True."""
         for row in self.grid:
