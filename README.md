@@ -75,9 +75,15 @@ Unit tests are available in the tests/ directory for key components such as:
 - **Player**: Tests player actions, including turns and feedback.
 - **Game**: Ensures game flow and win/lose conditions are met. 
 
-To run the tests: 
+### Run Tests:
 
 `python -m unittest discover -s tests`
+
+### Output:
+
+You should see output indicating the tests passed:
+
+<img width="570" alt="image" src="https://github.com/user-attachments/assets/af58ce5a-e7a6-41b1-9b33-20bdc628469b">
 
 ## Future Improvements 
 
