@@ -75,15 +75,29 @@ Unit tests are available in the tests/ directory for key components such as:
 - **Player**: Tests player actions, including turns and feedback.
 - **Game**: Ensures game flow and win/lose conditions are met. 
 
-### Run Tests:
+### Run Tests
 
 `python -m unittest discover -s tests`
 
-### Output:
+### Output
 
 You should see output indicating the tests passed:
 
 <img width="570" alt="image" src="https://github.com/user-attachments/assets/af58ce5a-e7a6-41b1-9b33-20bdc628469b">
+
+## Bugs
+
+1. I ran into an issue while testing the app because the test files could not identify the project files. I had to move most of these files to an `src` folder and use the `__init__.py` structure file.
+2. While running the code through the PEP8 (Code Validator - CI Python Linter) and fixing all the issues marked, the code was no longer working as expected and was caused by the break lines. I fixed this by reverting some of the recommendations to a single line of code.
+
+### Remaining Bugs
+
+- No more bugs identified.
+
+## Valdiator Testing
+
+- All validations were done through all the files (including test files) and fixed all elements.
+- Ran the code through the CI Python Linter - https://pep8ci.herokuapp.com/
 
 ## Future Improvements 
 
