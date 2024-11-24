@@ -46,5 +46,4 @@ class Grid:
     def display(self, reveal=False):
         """Display the grid, Reveal ship's if 'reveal' is True."""
         for row in self.grid:
-            print(" ".join(cell if reveal or cell not
-                  in ['S'] else '~' for cell in row))
+            print(" ".join(cell if reveal or cell not in ['S'] else '~' for cell in row))

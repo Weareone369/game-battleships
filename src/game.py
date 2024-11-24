@@ -1,5 +1,5 @@
-from grid import Grid
-from player import Player
+from .grid import Grid
+from .player import Player
 import random
 
 
@@ -59,21 +59,19 @@ class Game:
             print("\nTime to attack!")
             self.player.take_turn(self.pc_grid)
             if not self.pc_grid.ships:
-                print(f"Congratulations, {self.player.name}!",
-                      " You sank all PC's ships!")
+                print(f"Congratulations, {self.player.name}! You sank all PC's ships!")
                 break
 
             # PC's turn
             print("PC's turn...")
             while True:
-                x, y = random.randint(0, self.player_grid.size - 1),
-                random.randint(0, self.player_grid.size - 1)
+                x = random.randint(0, self.player_grid.size - 1)
+                y = random.randint(0, self.player_grid.size - 1)
                 result = self.player_grid.receive_shot(x, y)
                 if result != "already_shot":
                     print(f"PC shot at ({x}, {y}) and it was a {result}!")
                     break
 
                 if not self.player_grid.ships:
-                    print(f"Game over!, {self.player.name}.",
-                          " The PC sank all your ships!")
+                    print(f"Game over!, {self.player.name}. The PC sank all your ships!")
                     break
